@@ -1,9 +1,11 @@
 import Guitar from "./Guitar.js";
 
 class Inventory {
-  #guitars = [];
+  #guitars;
 
-  constructor() {}
+  constructor() {
+    this.#guitars = [];
+  }
 
   addGuitar(serialNumber, price, builder, model, type, backWood, topWood) {
     const guitar = new Guitar(
@@ -15,7 +17,6 @@ class Inventory {
       backWood,
       topWood
     );
-
     this.#guitars.push(guitar);
   }
 
@@ -27,6 +28,8 @@ class Inventory {
         return guitar;
       }
     }
+
+    return null;
   }
 
   search(searchGuitar) {

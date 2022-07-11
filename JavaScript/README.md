@@ -1,4 +1,4 @@
-# OOAD Examples in Javascript
+# Head First OOA&D Examples in Javascript
 
 Chapters:
 

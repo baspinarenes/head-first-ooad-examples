@@ -32,39 +32,36 @@ class Inventory {
     return null;
   }
 
-  search(searchGuitar) {
+  search(searchSpec) {
     const matchedGuitars = [];
 
     for (let i = 0; i < this.#guitars.length; i++) {
       const guitar = this.#guitars[i];
+      const guitarSpec = guitar.getSpec();
 
-      const builder = searchGuitar.getBuilder();
-
-      if (builder && builder !== "" && builder !== guitar.getBuilder()) {
+      if (searchSpec.getBuilder() !== guitarSpec.getBuilder()) {
         continue;
       }
 
-      const model = searchGuitar.getModel();
+      const model = searchSpec.getModel().toLowerCase();
 
-      if (model && model !== "" && model !== guitar.getModel()) {
+      if (
+        model &&
+        model !== "" &&
+        model !== guitarSpec.getModel().toLowerCase()
+      ) {
         continue;
       }
 
-      const type = searchGuitar.getType();
-
-      if (type && type !== "" && type !== guitar.getType()) {
+      if (searchSpec.getType() !== guitarSpec.getType()) {
         continue;
       }
 
-      const backWood = searchGuitar.getBackWood();
-
-      if (backWood && backWood !== "" && backWood !== guitar.getBackWood()) {
+      if (searchSpec.getBackWood() !== guitarSpec.getBackWood()) {
         continue;
       }
 
-      const topWood = searchGuitar.getTopWood();
-
-      if (topWood && topWood !== "" && topWood !== guitar.getTopWood()) {
+      if (searchSpec.getTopWood() !== guitarSpec.getTopWood()) {
         continue;
       }
 

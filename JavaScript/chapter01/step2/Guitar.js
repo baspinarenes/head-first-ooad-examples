@@ -1,3 +1,7 @@
+import Builder from "./Builder.js";
+import Type from "./Type.js";
+import Wood from "./Wood.js";
+
 class Guitar {
   #type;
   #model;
@@ -8,12 +12,12 @@ class Guitar {
   #serialNumber;
 
   constructor(serialNumber, price, builder, model, type, backWood, topWood) {
-    this.#type = type;
+    this.#type = type || Type.UNSPECIFIED;
     this.#model = model;
     this.#price = price;
-    this.#builder = builder;
-    this.#topWood = topWood;
-    this.#backWood = backWood;
+    this.#builder = builder || Builder.UNSPECIFIED;
+    this.#topWood = topWood || Wood.UNSPECIFIED;
+    this.#backWood = backWood || Wood.UNSPECIFIED;
     this.#serialNumber = serialNumber;
   }
 
@@ -30,7 +34,7 @@ class Guitar {
   }
 
   getBuilder() {
-    return this.#builder;
+    return this.#builder || Builder.UNSPECIFIED;
   }
 
   getModel() {
@@ -38,15 +42,15 @@ class Guitar {
   }
 
   getType() {
-    return this.#type;
+    return this.#type || Type.UNSPECIFIED;
   }
 
   getBackWood() {
-    return this.#backWood;
+    return this.#backWood || Wood.UNSPECIFIED;
   }
 
   getTopWood() {
-    return this.#topWood;
+    return this.#topWood || Wood.UNSPECIFIED;
   }
 }
 
