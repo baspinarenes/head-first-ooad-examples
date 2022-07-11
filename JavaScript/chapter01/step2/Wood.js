@@ -1,4 +1,4 @@
-const Wood = {
+const Wood = Object.freeze({
   INDIAN_ROSEWOOD: "Indian Rosewood",
   BRAZILIAN_ROSEWOOD: "Brazilian Rosewood",
   MAHOGANY: "Mahogany",
@@ -9,6 +9,6 @@ const Wood = {
   ALDER: "Alder",
   SITKA: "Sitka",
   UNSPECIFIED: "Unspecified",
-};
+});
 
 export default Wood;

@@ -21,7 +21,7 @@ class Inventory {
   }
 
   getGuitar(serialNumber) {
-    for (const i = 0; i < this.#guitars; i++) {
+    for (let i = 0; i < this.#guitars.length; i++) {
       const guitar = this.#guitars[i];
 
       if (guitar.getSerialNumber() === serialNumber) {

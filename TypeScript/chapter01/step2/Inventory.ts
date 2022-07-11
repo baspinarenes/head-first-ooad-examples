@@ -1,13 +1,24 @@
-import Guitar from "./Guitar.js";
+import Type from "./Type";
+import Wood from "./Wood";
+import Guitar from "./Guitar";
+import Builder from "./Builder";
 
 class Inventory {
-  #guitars;
+  private guitars: Guitar[];
 
   constructor() {
-    this.#guitars = [];
+    this.guitars = [];
   }
 
-  addGuitar(serialNumber, price, builder, model, type, backWood, topWood) {
+  public addGuitar(
+    serialNumber: string,
+    price: number,
+    builder: Builder,
+    model: string,
+    type: Type,
+    backWood: Wood,
+    topWood: Wood
+  ): void {
     const guitar = new Guitar(
       serialNumber,
       price,
@@ -17,12 +28,12 @@ class Inventory {
       backWood,
       topWood
     );
-    this.#guitars.push(guitar);
+    this.guitars.push(guitar);
   }
 
-  getGuitar(serialNumber) {
-    for (let i = 0; i < this.#guitars.length; i++) {
-      const guitar = this.#guitars[i];
+  public getGuitar(serialNumber: string): Guitar {
+    for (let i = 0; i < this.guitars.length; i++) {
+      const guitar = this.guitars[i];
 
       if (guitar.getSerialNumber() === serialNumber) {
         return guitar;
@@ -32,17 +43,17 @@ class Inventory {
     return null;
   }
 
-  search(searchGuitar) {
-    const matchingGuitars = [];
+  public search(searchGuitar: Guitar): Guitar[] {
+    const matchingGuitars: Guitar[] = [];
 
-    for (let i = 0; i < this.#guitars.length; i++) {
-      const guitar = this.#guitars[i];
+    for (let i = 0; i < this.guitars.length; i++) {
+      const guitar = this.guitars[i];
 
       if (searchGuitar.getBuilder() !== guitar.getBuilder()) {
         continue;
       }
 
-      const model = searchGuitar.getModel().toLowerCase();
+      const model: string = searchGuitar.getModel().toLowerCase();
 
       if (model && model !== "" && model !== guitar.getModel().toLowerCase()) {
         continue;

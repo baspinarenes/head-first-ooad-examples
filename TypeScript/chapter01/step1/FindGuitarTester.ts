@@ -1,7 +1,7 @@
-import Inventory from "./Inventory.js";
-import Guitar from "./Guitar.js";
+import Guitar from "./Guitar";
+import Inventory from "./Inventory";
 
-const inventory = new Inventory();
+const inventory: Inventory = new Inventory();
 initializeInventory(inventory);
 
 const whatErinLikes = new Guitar(
@@ -23,7 +23,7 @@ if (guitar) {
   console.log("Sorry, Erin, we have nothing for you.");
 }
 
-function initializeInventory(inventory) {
+function initializeInventory(inventory: Inventory): void {
   inventory.addGuitar(
     "11277",
     3999.95,

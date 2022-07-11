@@ -27,7 +27,7 @@ class FindGuitarTester {
         const guitarSpec = guitar.getSpec();
 
         console.log(
-          `  We have a ${guitarSpec.getBuilder()} ${guitarSpec.getModel()} ${guitarSpec.getType()} guitar:\n     ${guitarSpec.getBackWood()} back and sides,\n     ${guitarSpec.getTopWood()} top.\n  You can have it for only $ ${guitar.getPrice()} !\n  ----`
+          `  We have a ${guitarSpec.getBuilder()} ${guitarSpec.getModel()} ${guitarSpec.getType()} guitar:\n     ${guitarSpec.getBackWood()} back and sides,\n     ${guitarSpec.getTopWood()} top.\n  You can have it for only $${guitar.getPrice()}!\n  ----`
         );
       }
     } else {

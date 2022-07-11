@@ -1,16 +1,16 @@
 class GuitarSpec {
-  #type;
-  #model;
   #builder;
-  #topWood;
+  #model;
+  #type;
   #backWood;
+  #topWood;
 
   constructor(builder, model, type, backWood, topWood) {
-    this.#type = type || Type.UNSPECIFIED;
+    this.#builder = builder ?? Builder.UNSPECIFIED;
     this.#model = model;
-    this.#builder = builder || Builder.UNSPECIFIED;
-    this.#topWood = topWood || Wood.UNSPECIFIED;
-    this.#backWood = backWood || Wood.UNSPECIFIED;
+    this.#type = type ?? Type.UNSPECIFIED;
+    this.#backWood = backWood ?? Wood.UNSPECIFIED;
+    this.#topWood = topWood ?? Wood.UNSPECIFIED;
   }
 
   getBuilder() {

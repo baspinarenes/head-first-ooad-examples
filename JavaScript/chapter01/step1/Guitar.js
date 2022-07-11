@@ -1,20 +1,20 @@
 class Guitar {
-  #type;
-  #model;
+  #serialNumber;
   #price;
   #builder;
-  #topWood;
+  #model;
+  #type;
   #backWood;
-  #serialNumber;
+  #topWood;
 
   constructor(serialNumber, price, builder, model, type, backWood, topWood) {
-    this.#type = type || Type.UNSPECIFIED;
-    this.#model = model;
-    this.#price = price;
-    this.#builder = builder || Builder.UNSPECIFIED;
-    this.#topWood = topWood || Wood.UNSPECIFIED;
-    this.#backWood = backWood || Wood.UNSPECIFIED;
     this.#serialNumber = serialNumber;
+    this.#price = price;
+    this.#builder = builder;
+    this.#model = model;
+    this.#type = type;
+    this.#backWood = backWood;
+    this.#topWood = topWood;
   }
 
   getSerialNumber() {

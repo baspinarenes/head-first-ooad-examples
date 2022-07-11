@@ -1,4 +1,4 @@
-const Builder = {
+const Builder = Object.freeze({
   FENDER: "Fender",
   MARTIN: "Martin",
   GIBSON: "Gibson",
@@ -7,6 +7,6 @@ const Builder = {
   RYAN: "Ryan",
   PRS: "PRS",
   UNSPECIFIED: "Unspecified",
-};
+});
 
 export default Builder;

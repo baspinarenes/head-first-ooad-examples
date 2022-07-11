@@ -1,10 +1,6 @@
 class Airplane {
   #speed;
 
-  constructor(speed) {
-    this.#speed = speed;
-  }
-
   setSpeed(newSpeed) {
     this.#speed = newSpeed;
   }

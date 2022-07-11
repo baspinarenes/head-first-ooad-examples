@@ -1,39 +1,38 @@
-import Type from "./Type.js";
-import Wood from "./Wood.js";
-import Guitar from "./Guitar.js";
-import Builder from "./Builder.js";
-import Inventory from "./Inventory.js";
+import Type from "./Type";
+import Wood from "./Wood";
+import Guitar from "./Guitar";
+import Builder from "./Builder";
+import Inventory from "./Inventory";
+import GuitarSpec from "./GuitarSpec";
 
-const inventory = new Inventory();
+const inventory: Inventory = new Inventory();
 initializeInventory(inventory);
 
-const whatErinLikes = new Guitar(
-  null,
-  null,
+const whatErinLikes: GuitarSpec = new GuitarSpec(
   Builder.FENDER,
   "Stratocastor",
   Type.ELECTRIC,
   Wood.ALDER,
   Wood.ALDER
 );
-
-const matchingGuitars = inventory.search(whatErinLikes);
+const matchingGuitars: Guitar[] = inventory.search(whatErinLikes);
 
 if (matchingGuitars.length > 0) {
   console.log("Erin, you might like these guitars:");
 
   for (let i = 0; i < matchingGuitars.length; i++) {
     const guitar = matchingGuitars[i];
+    const spec = guitar.getSpec();
 
     console.log(
-      `  We have a ${guitar.getBuilder()} ${guitar.getModel()} ${guitar.getType()} guitar:\n     ${guitar.getBackWood()} back and sides,\n     ${guitar.getTopWood()} top.\n  You can have it for only $${guitar.getPrice()}!\n  ----`
+      `  We have a ${spec.getBuilder()} ${spec.getModel()} ${spec.getType()} guitar:\n     ${spec.getBackWood()} back and sides,\n     ${spec.getTopWood()} top.\n  You can have it for only $${guitar.getPrice()}!\n  ----`
     );
   }
 } else {
   console.log("Sorry, Erin, we have nothing for you.");
 }
 
-function initializeInventory(inventory) {
+function initializeInventory(inventory: Inventory): void {
   inventory.addGuitar(
     "11277",
     3999.95,

@@ -2,4 +2,5 @@
 
 Examples originally written in Java and equivalents in other languages:
 
-- [Javascript](/JavaScript/)
+- [JavaScript](/JavaScript/)
+- [TypeScript](/TypeScript/)
