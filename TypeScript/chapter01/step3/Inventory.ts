@@ -5,10 +5,10 @@ import Builder from "./Builder";
 import GuitarSpec from "./GuitarSpec";
 
 class Inventory {
-  private guitars: Guitar[];
+  private _guitars: Guitar[];
 
   constructor() {
-    this.guitars = [];
+    this._guitars = [];
   }
 
   public addGuitar(
@@ -29,14 +29,14 @@ class Inventory {
       backWood,
       topWood
     );
-    this.guitars.push(guitar);
+    this._guitars.push(guitar);
   }
 
   public getGuitar(serialNumber: string): Guitar {
-    for (let i = 0; i < this.guitars.length; i++) {
-      const guitar = this.guitars[i];
+    for (let i = 0; i < this._guitars.length; i++) {
+      const guitar = this._guitars[i];
 
-      if (guitar.getSerialNumber() === serialNumber) {
+      if (guitar.serialNumber === serialNumber) {
         return guitar;
       }
     }
@@ -47,33 +47,29 @@ class Inventory {
   public search(searchSpec: GuitarSpec): Guitar[] {
     const matchingGuitars: Guitar[] = [];
 
-    for (let i = 0; i < this.guitars.length; i++) {
-      const guitar: Guitar = this.guitars[i];
-      const guitarSpec: GuitarSpec = guitar.getSpec();
+    for (let i = 0; i < this._guitars.length; i++) {
+      const guitar: Guitar = this._guitars[i];
+      const guitarSpec: GuitarSpec = guitar.spec;
 
-      if (searchSpec.getBuilder() !== guitarSpec.getBuilder()) {
+      if (searchSpec.builder !== guitarSpec.builder) {
         continue;
       }
 
-      const model: string = searchSpec.getModel().toLowerCase();
+      const model: string = searchSpec.model.toLowerCase();
 
-      if (
-        model &&
-        model !== "" &&
-        model !== guitarSpec.getModel().toLowerCase()
-      ) {
+      if (model && model !== "" && model !== guitarSpec.model.toLowerCase()) {
         continue;
       }
 
-      if (searchSpec.getType() !== guitarSpec.getType()) {
+      if (searchSpec.type !== guitarSpec.type) {
         continue;
       }
 
-      if (searchSpec.getBackWood() !== guitarSpec.getBackWood()) {
+      if (searchSpec.backWood !== guitarSpec.backWood) {
         continue;
       }
 
-      if (searchSpec.getTopWood() !== guitarSpec.getTopWood()) {
+      if (searchSpec.topWood !== guitarSpec.topWood) {
         continue;
       }
 

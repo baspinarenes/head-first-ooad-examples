@@ -16,9 +16,9 @@ const whatErinLikes = new Guitar(
 const guitar = inventory.search(whatErinLikes);
 
 if (guitar) {
-  console.log(
-    `Erin, you might like this ${guitar.getBuilder()} ${guitar.getModel()} ${guitar.getType()} guitar:\n ${guitar.getBackWood()} back and sides, ${guitar.getTopWood()} top.\n You can have it for only $${guitar.getPrice()}!`
-  );
+  console.log(`Erin, you might like this ${guitar.builder} ${guitar.model} ${guitar.type} guitar:
+ ${guitar.backWood} back and sides, ${guitar.topWood} top.
+ You can have it for only $${guitar.price}!`);
 } else {
   console.log("Sorry, Erin, we have nothing for you.");
 }

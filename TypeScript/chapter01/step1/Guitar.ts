@@ -1,11 +1,11 @@
 class Guitar {
-  private serialNumber: string;
-  private price: number;
-  private builder: string;
-  private model: string;
-  private type: string;
-  private backWood: string;
-  private topWood: string;
+  private _serialNumber: string;
+  private _price: number;
+  private _builder: string;
+  private _model: string;
+  private _type: string;
+  private _backWood: string;
+  private _topWood: string;
 
   constructor(
     serialNumber: string,
@@ -16,45 +16,45 @@ class Guitar {
     backWood: string,
     topWood: string
   ) {
-    this.serialNumber = serialNumber;
-    this.price = price;
-    this.builder = builder;
-    this.model = model;
-    this.type = type;
-    this.backWood = backWood;
-    this.topWood = topWood;
+    this._serialNumber = serialNumber;
+    this._price = price;
+    this._builder = builder;
+    this._model = model;
+    this._type = type;
+    this._backWood = backWood;
+    this._topWood = topWood;
   }
 
-  public getSerialNumber(): string {
-    return this.serialNumber;
+  get serialNumber(): string {
+    return this._serialNumber;
   }
 
-  public getPrice(): number {
-    return this.price;
+  get price(): number {
+    return this._price;
   }
 
-  public setPrice(newPrice: number): void {
-    this.price = newPrice;
+  set price(newPrice: number) {
+    this._price = newPrice;
   }
 
-  public getBuilder(): string {
-    return this.builder;
+  get builder(): string {
+    return this._builder;
   }
 
-  public getModel(): string {
-    return this.model;
+  get model(): string {
+    return this._model;
   }
 
-  public getType(): string {
-    return this.type;
+  get type(): string {
+    return this._type;
   }
 
-  public getBackWood(): string {
-    return this.backWood;
+  get backWood(): string {
+    return this._backWood;
   }
 
-  public getTopWood(): string {
-    return this.topWood;
+  get topWood(): string {
+    return this._topWood;
   }
 }
 

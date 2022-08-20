@@ -4,10 +4,10 @@ import Guitar from "./Guitar";
 import Builder from "./Builder";
 
 class Inventory {
-  private guitars: Guitar[];
+  private _guitars: Guitar[];
 
   constructor() {
-    this.guitars = [];
+    this._guitars = [];
   }
 
   public addGuitar(
@@ -28,14 +28,14 @@ class Inventory {
       backWood,
       topWood
     );
-    this.guitars.push(guitar);
+    this._guitars.push(guitar);
   }
 
   public getGuitar(serialNumber: string): Guitar {
-    for (let i = 0; i < this.guitars.length; i++) {
-      const guitar = this.guitars[i];
+    for (let i = 0; i < this._guitars.length; i++) {
+      const guitar = this._guitars[i];
 
-      if (guitar.getSerialNumber() === serialNumber) {
+      if (guitar.serialNumber === serialNumber) {
         return guitar;
       }
     }
@@ -46,28 +46,28 @@ class Inventory {
   public search(searchGuitar: Guitar): Guitar[] {
     const matchingGuitars: Guitar[] = [];
 
-    for (let i = 0; i < this.guitars.length; i++) {
-      const guitar = this.guitars[i];
+    for (let i = 0; i < this._guitars.length; i++) {
+      const guitar = this._guitars[i];
 
-      if (searchGuitar.getBuilder() !== guitar.getBuilder()) {
+      if (searchGuitar.builder !== guitar.builder) {
         continue;
       }
 
-      const model: string = searchGuitar.getModel().toLowerCase();
+      const model: string = searchGuitar.model.toLowerCase();
 
-      if (model && model !== "" && model !== guitar.getModel().toLowerCase()) {
+      if (model && model !== "" && model !== guitar.model.toLowerCase()) {
         continue;
       }
 
-      if (searchGuitar.getType() !== guitar.getType()) {
+      if (searchGuitar.type !== guitar.type) {
         continue;
       }
 
-      if (searchGuitar.getBackWood() !== guitar.getBackWood()) {
+      if (searchGuitar.backWood !== guitar.backWood) {
         continue;
       }
 
-      if (searchGuitar.getTopWood() !== guitar.getTopWood()) {
+      if (searchGuitar.topWood !== guitar.topWood) {
         continue;
       }
 

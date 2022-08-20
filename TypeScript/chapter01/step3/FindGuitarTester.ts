@@ -22,11 +22,13 @@ if (matchingGuitars.length > 0) {
 
   for (let i = 0; i < matchingGuitars.length; i++) {
     const guitar = matchingGuitars[i];
-    const spec = guitar.getSpec();
+    const spec = guitar.spec;
 
-    console.log(
-      `  We have a ${spec.getBuilder()} ${spec.getModel()} ${spec.getType()} guitar:\n     ${spec.getBackWood()} back and sides,\n     ${spec.getTopWood()} top.\n  You can have it for only $${guitar.getPrice()}!\n  ----`
-    );
+    console.log(`  We have a ${spec.builder} ${spec.model} ${spec.type} guitar:
+     ${spec.backWood} back and sides,
+     ${spec.topWood} top.
+  You can have it for only $${guitar.price}!
+  ----`);
   }
 } else {
   console.log("Sorry, Erin, we have nothing for you.");

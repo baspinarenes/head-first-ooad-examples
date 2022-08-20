@@ -1,33 +1,30 @@
-import Type from "./Type";
-import Wood from "./Wood";
-import Builder from "./Builder";
 import GuitarSpec from "./GuitarSpec";
 
 class Guitar {
-  private serialNumber: string;
-  private price: number;
-  private spec: GuitarSpec;
+  private _serialNumber: string;
+  private _price: number;
+  private _spec: GuitarSpec;
 
   constructor(serialNumber: string, price: number, spec: GuitarSpec) {
-    this.serialNumber = serialNumber;
-    this.price = price;
-    this.spec = spec;
+    this._serialNumber = serialNumber;
+    this._price = price;
+    this._spec = spec;
   }
 
-  public getSerialNumber(): string {
-    return this.serialNumber;
+  get serialNumber(): string {
+    return this._serialNumber;
   }
 
-  public getPrice(): number {
-    return this.price;
+  get price(): number {
+    return this._price;
   }
 
-  public setPrice(newPrice: number): void {
-    this.price = newPrice;
+  set price(newPrice: number) {
+    this._price = newPrice;
   }
 
-  public getSpec(): GuitarSpec {
-    return this.spec;
+  get spec(): GuitarSpec {
+    return this._spec;
   }
 }
 

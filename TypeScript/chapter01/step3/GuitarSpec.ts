@@ -3,11 +3,11 @@ import Wood from "./Wood";
 import Builder from "./Builder";
 
 class GuitarSpec {
-  private builder: Builder;
-  private model: string;
-  private type: Type;
-  private backWood: Wood;
-  private topWood: Wood;
+  private _builder: Builder;
+  private _model: string;
+  private _type: Type;
+  private _backWood: Wood;
+  private _topWood: Wood;
 
   constructor(
     builder: Builder,
@@ -16,31 +16,31 @@ class GuitarSpec {
     backWood: Wood,
     topWood: Wood
   ) {
-    this.builder = builder ?? Builder.UNSPECIFIED;
-    this.model = model;
-    this.type = type ?? Type.UNSPECIFIED;
-    this.backWood = backWood ?? Wood.UNSPECIFIED;
-    this.topWood = topWood ?? Wood.UNSPECIFIED;
+    this._builder = builder;
+    this._model = model;
+    this._type = type;
+    this._backWood = backWood;
+    this._topWood = topWood;
   }
 
-  public getBuilder(): Builder {
-    return this.builder;
+  get builder(): Builder {
+    return this._builder ?? Builder.UNSPECIFIED;
   }
 
-  public getModel(): string {
-    return this.model;
+  get model(): string {
+    return this._model;
   }
 
-  public getType(): Type {
-    return this.type;
+  get type(): Type {
+    return this._type ?? Type.UNSPECIFIED;
   }
 
-  public getBackWood(): Wood {
-    return this.backWood;
+  get backWood(): Wood {
+    return this._backWood ?? Wood.UNSPECIFIED;
   }
 
-  public getTopWood(): Wood {
-    return this.topWood;
+  get topWood(): Wood {
+    return this._topWood ?? Wood.UNSPECIFIED;
   }
 }
 

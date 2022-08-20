@@ -1,7 +1,4 @@
-import Type from "./Type";
-import Wood from "./Wood";
 import Guitar from "./Guitar";
-import Builder from "./Builder";
 import GuitarSpec from "./GuitarSpec";
 
 class Inventory {
@@ -24,7 +21,7 @@ class Inventory {
     for (let i = 0; i < this.guitars.length; i++) {
       const guitar = this.guitars[i];
 
-      if (guitar.getSerialNumber() === serialNumber) {
+      if (guitar.serialNumber === serialNumber) {
         return guitar;
       }
     }
@@ -38,7 +35,7 @@ class Inventory {
     for (let i = 0; i < this.guitars.length; i++) {
       const guitar = this.guitars[i];
 
-      if (guitar.getSpec().matches(searchSpec)) {
+      if (guitar.spec.matches(searchSpec)) {
         matchingGuitars.push(guitar);
       }
     }
