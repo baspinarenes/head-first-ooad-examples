@@ -2,25 +2,25 @@ import Airplane from "./Airplane";
 import Jet from "./Jet";
 
 const biplane: Airplane = new Airplane();
-biplane.setSpeed(212);
-console.log(biplane.getSpeed());
+biplane.speed = 212;
+console.log(biplane.speed);
 
 const boeing: Jet = new Jet();
-boeing.setSpeed(422);
-console.log(boeing.getSpeed());
+boeing.speed = 422;
+console.log(boeing.speed);
 
 let x: number = 0;
 
 while (x < 4) {
   boeing.accelerate();
-  console.log(boeing.getSpeed());
+  console.log(boeing.speed);
 
-  if (boeing.getSpeed() > 5000) {
-    biplane.setSpeed(biplane.getSpeed() * 2);
+  if (boeing.speed > 5000) {
+    biplane.speed = biplane.speed * 2;
   } else {
     boeing.accelerate();
   }
   x++;
 }
 
-console.log(biplane.getSpeed());
+console.log(biplane.speed);

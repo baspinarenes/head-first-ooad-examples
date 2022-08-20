@@ -1,18 +1,22 @@
 import Airplane from "./Airplane";
 
 class Jet extends Airplane {
-  private static MULTIPLIER: number = 2;
+  private static readonly MULTIPLIER: number = 2;
 
   constructor() {
     super();
   }
 
-  setSpeed(newSpeed: number): void {
-    super.setSpeed(newSpeed * Jet.MULTIPLIER);
+  set speed(newSpeed: number) {
+    super.speed = newSpeed * Jet.MULTIPLIER;
+  }
+
+  get speed(): number {
+    return super.speed;
   }
 
   accelerate(): void {
-    super.setSpeed(super.getSpeed() * 2);
+    super.speed = super.speed * 2;
   }
 }
 

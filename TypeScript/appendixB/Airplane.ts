@@ -1,12 +1,12 @@
 class Airplane {
-  private speed: number;
+  private _speed: number;
 
-  public setSpeed(newSpeed: number): void {
-    this.speed = newSpeed;
+  set speed(newSpeed: number) {
+    this._speed = newSpeed;
   }
 
-  public getSpeed(): number {
-    return this.speed;
+  get speed(): number {
+    return this._speed;
   }
 }
 
